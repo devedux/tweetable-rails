@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use devise
 gem 'devise'
 
+# Use OmniAuth
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
