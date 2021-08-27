@@ -1,10 +1,15 @@
 <div>
-  <h2>Edit Tweet</h2>  
+  <h2 class="heading heading--xs block t-center" >Edit Tweet</h2> 
 </div>
-<div>
+<div class="tweet tweet--form mt-16" >
   <%= form_with model: @tweet do |form| %>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-    <%= form.submit "Edit" %>
+    <div class="input" >
+      <div class="input__label" >
+        <%= form.label :body %>
+      </div>
+      <%= form.text_area :body, placeholder: 'Remember to thing before write...', class: 'input--text-area input--form' %>
+    </div>
+
+    <%= form.submit "Edit", class: 'btn tweet--form-btn' %>
   <% end %>
 </div>
