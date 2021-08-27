@@ -32,5 +32,14 @@
     <% end %>
   </div>
 
-
+  <div>
+    <% @tweet.comments.each do |comment| %>
+      <div>
+        <%= comment.id %>
+        <%= image_tag comment.user.avatar %>
+        <%= comment.user.name %>
+      </div>
+      <p><%= comment.body %></p>
+    <% end %>
+  </div>
 </div>

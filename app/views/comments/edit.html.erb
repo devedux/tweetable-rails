@@ -1,0 +1,10 @@
+<div>
+  <h2>Edit Tweet</h2>  
+</div>
+<div>
+  <%= form_with model: [@tweet, @comment] do |form| %>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <%= form.submit "Edit" %>
+  <% end %>
+</div>
