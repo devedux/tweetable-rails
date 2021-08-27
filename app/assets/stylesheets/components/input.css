@@ -1,0 +1,81 @@
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary-300);
+  line-height: 24px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  font-family: var(--primary-font);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.input__label {
+  color: var(--secondary-400);
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+}
+
+.input__label-text {
+  text-transform: initial;
+  font-size: 10px;
+}
+
+.input--text {
+  border: 1px solid var(--secondary-300);
+  border-radius: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.input--text-area {
+  border: 1px solid var(--secondary-300);
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 8px 12px;
+}
+
+.input--comment {
+  height: 88px;
+}
+.input--form {
+  height: 136px;
+}
+
+.input--error {
+  border: 1px solid red;
+}
+
+.input--file-container {
+  display: flex;
+  gap: 10px;
+}
+
+.input--file-container .input-file {
+  border-radius: 4px;
+  border: 1px solid #000000;
+  outline: none;
+  background: #efefef;
+  line-height: 24px;
+  color: #303036;
+  padding: 0 6px;
+  cursor: pointer;
+}

@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+
+  root to: 'tweets#index'
+
+  resources :tweets, only: %i[index create show update edit destroy delete] do
+    resources :comments, only: %i[create update edit destroy delete]
+  end
 end

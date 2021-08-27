@@ -1,0 +1,67 @@
+<div>
+  <h2 class="heading heading--xs block t-center" >Tuit Detail</h2>
+</div>
+
+<div class="tweet tweet--card mb-16" >
+  <%= image_tag @tweet.user.avatar, size: "50x50", class: "tweet--card-avatar" %>
+
+  <article class="tweet--card-detail" >
+    <div class="card__detail-information" >
+      <span class="detail__information-name" ><%= @tweet.user.name %></span>
+      <span class="detail__information-username" >@<%= @tweet.user.username %></span>
+    </div>
+
+    <p class="detail__description mb-8" ><%= @tweet.body %></p>
+
+    <%= link_to tweet_path(@tweet), class: "detail__actions" do %>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.53053 0L8.47089 0.00708861V0.00637975C11.5686 0.00708861 13.9957 2.43139 14 5.52699V5.53904C13.9979 7.19919 13.1912 8.8721 11.8429 10.0134C10.6981 10.9817 6.29681 13.7973 6.10967 13.9164C6.02106 13.9731 5.92253 14 5.82471 14C5.64891 14 5.47737 13.9135 5.37671 13.754C5.32284 13.6711 5.29165 13.5449 5.29165 13.4684V10.7548C2.25843 10.6386 0 8.43544 0 5.53053C0 2.42927 2.42856 0 5.52911 0H5.53053ZM6.35494 12.4937C7.70886 11.6161 10.3515 9.88294 11.1553 9.20243H11.1561C12.2704 8.25823 12.936 6.88729 12.9381 5.53337C12.9367 3.03109 10.9746 1.07038 8.47089 1.07038H8.46947L5.52982 1.06329C3.02613 1.06329 1.064 3.02542 1.064 5.53053C1.064 7.94775 2.94815 9.70289 5.54258 9.70289H5.82329C6.11747 9.70289 6.35494 9.94106 6.35494 10.2345V12.4937Z" fill="#6E7F8D"/>
+      </svg>
+      <span><%= @tweet.comments_count %></span>      
+    <% end %>
+  </article>
+</div>
+
+<div>
+  <div class="tweet tweet--form mb-16" >
+    <%= form_with model: [@tweet, @comment] do |form| %>
+      <div class="input" >
+        <%= form.text_area :body, placeholder: 'Remember to thing before write...', class: 'input--text-area input--form' %>
+      </div>
+      <%= form.submit 'comment', class: 'btn tweet--form-btn' %>
+    <% end %>
+  </div>
+
+  <div>
+    <% @tweet.comments.each do |comment| %>
+      <div class="tweet tweet--card mb-16" >
+        <%= image_tag comment.user.avatar, size: "50x50", class: "tweet--card-avatar" %>
+
+        <article class="tweet--card-detail" >
+          <div class="card__detail-information" >
+            <span class="detail__information-name" ><%= comment.user.name %></span>
+            <span class="detail__information-username" >@<%= comment.user.username %></span>
+          </div>
+
+          <p class="detail__description mb-8" ><%= comment.body %></p>
+        
+          <% if current_user == comment.user %>
+            <div class="detail__actions detail__actions--left" >
+              <%= link_to edit_tweet_comment_path(@tweet, comment) do %>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.33341 2.33334H2.00008C1.2637 2.33334 0.666748 2.93029 0.666748 3.66667V11C0.666748 11.7364 1.2637 12.3333 2.00008 12.3333H9.33341C10.0698 12.3333 10.6667 11.7364 10.6667 11V7.66667M9.72394 1.39052C10.2446 0.869825 11.0889 0.869825 11.6096 1.39052C12.1303 1.91122 12.1303 2.75544 11.6096 3.27614L5.8857 9H4.00008L4.00008 7.11438L9.72394 1.39052Z" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>              
+              <% end %>
+
+              <%= link_to tweet_comment_path(@tweet, comment), method: :delete do %>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.6667 3.66667L10.0885 11.7617C10.0387 12.4594 9.45811 13 8.75859 13H3.24157C2.54205 13 1.96147 12.4594 1.91163 11.7617L1.33341 3.66667M4.66675 6.33333V10.3333M7.33341 6.33333V10.3333M8.00008 3.66667V1.66667C8.00008 1.29848 7.7016 1 7.33341 1H4.66675C4.29856 1 4.00008 1.29848 4.00008 1.66667V3.66667M0.666748 3.66667H11.3334" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              <% end %>
+            </div>            
+          <% end %>
+        </article>
+      </div>
+    <% end %>
+  </div>
+</div>
