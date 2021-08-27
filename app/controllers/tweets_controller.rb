@@ -6,7 +6,9 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   def create
     @tweet = Tweet.new(tweet_params)
