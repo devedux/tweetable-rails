@@ -1,7 +1,8 @@
 class Tweet < ApplicationRecord
   # associations
   belongs_to :user
-  # has_many :comments, counter_cache: true
+
+  has_many :comments, dependent: :destroy
 
   # validations
   validates :body, presence: true

@@ -3,8 +3,8 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   # associations
-  # has_many :tweets, dependent: :destroy
-  # has_many :comments, dependent: :destroy
+  has_many :tweets, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # validations
   validates :email, presence: true
