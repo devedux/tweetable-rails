@@ -1,0 +1,40 @@
+/* Widths */
+.w-full {
+  width: 100%;
+}
+
+/* Colors */
+.primary {
+  color: var(--primary);
+}
+
+/* Weight */
+.w-b {
+  font-weight: bold;
+}
+
+/* Sizes */
+.s-16 {
+  font-size: 16px;
+}
+
+/* Alings */
+
+.t-center {
+  text-align: center;
+}
+
+/* Displays */
+
+.block {
+  display: block;
+}
+
+/* Margins */
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
