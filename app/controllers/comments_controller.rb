@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit]
-  before_action :set_tweet, only: %i[edit update]
+  before_action :set_tweet, only: %i[edit update destroy]
 
   def create
     @tweet = Tweet.find(params[:tweet_id])
@@ -20,6 +20,11 @@ class CommentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @comment = @tweet.comments.destroy(params[:id])
+    redirect_to @tweet
   end
 
   private
