@@ -1,0 +1,32 @@
+<div>
+  <h2>Home</h2>
+</div>
+
+<div>
+  <%= form_with model: @tweet do |form| %>
+    <%= form.text_area :body, placeholder: 'Remember to thing before write...' %>
+    <%= form.submit 'Tweet' %>
+  <% end %>
+</div>
+
+<div>
+  <% @tweets.each do |tweet| %>
+    <div>
+      <div>
+        <%= image_tag tweet.user.avatar %>
+      </div>
+      <div>
+        <div>
+          <%= tweet.user.name %>
+          <%= tweet.user.username %>
+        </div>
+        <div>
+          <%= tweet.body %>
+        </div>
+        <div>
+          comment
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
