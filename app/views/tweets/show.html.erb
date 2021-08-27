@@ -45,19 +45,21 @@
 
           <p class="detail__description mb-8" ><%= comment.body %></p>
         
-          <div>
-            <%= link_to edit_tweet_comment_path(@tweet, comment) do %>
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.33341 2.33334H2.00008C1.2637 2.33334 0.666748 2.93029 0.666748 3.66667V11C0.666748 11.7364 1.2637 12.3333 2.00008 12.3333H9.33341C10.0698 12.3333 10.6667 11.7364 10.6667 11V7.66667M9.72394 1.39052C10.2446 0.869825 11.0889 0.869825 11.6096 1.39052C12.1303 1.91122 12.1303 2.75544 11.6096 3.27614L5.8857 9H4.00008L4.00008 7.11438L9.72394 1.39052Z" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>              
-            <% end %>
+          <% if current_user == comment.user %>
+            <div class="detail__actions detail__actions--left" >
+              <%= link_to edit_tweet_comment_path(@tweet, comment) do %>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.33341 2.33334H2.00008C1.2637 2.33334 0.666748 2.93029 0.666748 3.66667V11C0.666748 11.7364 1.2637 12.3333 2.00008 12.3333H9.33341C10.0698 12.3333 10.6667 11.7364 10.6667 11V7.66667M9.72394 1.39052C10.2446 0.869825 11.0889 0.869825 11.6096 1.39052C12.1303 1.91122 12.1303 2.75544 11.6096 3.27614L5.8857 9H4.00008L4.00008 7.11438L9.72394 1.39052Z" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>              
+              <% end %>
 
-            <%= link_to tweet_comment_path(@tweet, comment), method: :delete do %>
-              <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.6667 3.66667L10.0885 11.7617C10.0387 12.4594 9.45811 13 8.75859 13H3.24157C2.54205 13 1.96147 12.4594 1.91163 11.7617L1.33341 3.66667M4.66675 6.33333V10.3333M7.33341 6.33333V10.3333M8.00008 3.66667V1.66667C8.00008 1.29848 7.7016 1 7.33341 1H4.66675C4.29856 1 4.00008 1.29848 4.00008 1.66667V3.66667M0.666748 3.66667H11.3334" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            <% end %>
-          </div>
+              <%= link_to tweet_comment_path(@tweet, comment), method: :delete do %>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.6667 3.66667L10.0885 11.7617C10.0387 12.4594 9.45811 13 8.75859 13H3.24157C2.54205 13 1.96147 12.4594 1.91163 11.7617L1.33341 3.66667M4.66675 6.33333V10.3333M7.33341 6.33333V10.3333M8.00008 3.66667V1.66667C8.00008 1.29848 7.7016 1 7.33341 1H4.66675C4.29856 1 4.00008 1.29848 4.00008 1.66667V3.66667M0.666748 3.66667H11.3334" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              <% end %>
+            </div>            
+          <% end %>
         </article>
       </div>
     <% end %>

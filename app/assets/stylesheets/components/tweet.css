@@ -47,7 +47,14 @@
   color: #000;
 }
 
-.detail__actions {
+.detail__actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail__actions,
+.detail__actions--left {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -57,4 +64,8 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--secondary-400);
+}
+
+.detail__actions--left {
+  justify-content: flex-end;
 }
