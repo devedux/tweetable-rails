@@ -6,11 +6,13 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_one_attached :avatar
+
   # validations
-  validates :email, presence: true
   validates :email, uniqueness: true
+  validates :email, presence: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
+  validates :name, presence: true
   validates :username, presence: true
   validates :username, uniqueness: true
-  validates :name, presence: true
 end
