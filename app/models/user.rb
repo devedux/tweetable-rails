@@ -21,7 +21,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[github]
 
   def self.from_omniauth(auth)
     authentication = Authentication.where(provider: auth.provider,
@@ -52,7 +53,7 @@ class User < ApplicationRecord
   end
 
   def avatar_attach(info)
-    download_image URI.parse(info.image).open
+    download_image = URI.parse(info.image).open
     avatar.attach(io: download_image, filename: "#{info.nickname || info.name}-avatar")
   end
 end
