@@ -30,6 +30,11 @@ textarea {
   letter-spacing: 1.5px;
 }
 
+.input__label-text {
+  text-transform: initial;
+  font-size: 10px;
+}
+
 .input--text {
   border: 1px solid var(--secondary-300);
   border-radius: 6px;
