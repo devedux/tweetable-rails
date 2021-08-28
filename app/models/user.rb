@@ -31,17 +31,17 @@ class User < ApplicationRecord
 
     unless authentication.user
       user = find_by(email: auth.info.email)
-      user ||= create_user(auth.info)
+      user ||= create_user(auth)
       authentication.user = user
       authentication.save
     end
     authentication.user
   end
 
-  def self.create_user(info)
+  def self.create_user(auth)
     user = User.new
-    user.complete_attributes(info)
-    user.avatar_attach(info)
+    user.complete_attributes(auth.info)
+    user.avatar_attach(auth.info) unless auth.provider == 'facebook'
     user.save
     user
   end
