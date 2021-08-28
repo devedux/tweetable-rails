@@ -47,19 +47,28 @@
   line-height: 24px;
 }
 
-.btn--github-container {
+.btn--social-container {
   display: flex;
   justify-content: center;
   margin-top: 16px;
 }
-.btn--github {
+.btn--social {
   padding: 8px 16px;
   width: 100%;
   font-size: 14px;
-  background-color: #22272e;
   color: white;
   border-radius: 50px;
   line-height: 24px;
   text-align: center;
   font-weight: 700;
+}
+.btn--social.github {
+  background-color: #22272e;
+}
+.btn--social.google_oauth2 {
+  background-color: #f86f6f;
+}
+.btn--social.facebook {
+  border: 1px solid #0e8ef1;
+  color: #0e8ef1;
 }
