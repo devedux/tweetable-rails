@@ -25,7 +25,7 @@ class TweetsController < ApplicationController
     @tweet.user = current_user
     return render :index unless @tweet.save
 
-    redirect_to :root
+    redirect_to :root, notice: 'Tweet was successfully created.'
   end
 
   private
