@@ -1,14 +1,16 @@
-<div class="mb-16" >
-  <h2 class="heading heading--xs block t-center" >Tuit Detail</h2>
-</div>
+<div class="mx-700">
+  <div class="mb-16" >
+    <h2 class="heading heading--xs block t-center" >Tuit Detail</h2>
+  </div>
 
-<%= render 'card', model_entity: @tweet, card_name: 'tweet' %>
+  <%= render 'card', model_entity: @tweet, card_name: 'tweet' %>
 
-<div class="mt-16">
-  <%= render 'form', tweet: nil, comment: [@tweet, @comment], submit_text: 'comment', action_method: 'new' %>
-  <div>
-    <% @tweet.comments.order(updated_at: :desc).each do |comment| %>
-      <%= render 'card', model_entity: comment, card_name: 'comment' %>
-    <% end %>
+  <div class="mt-16">
+    <%= render 'form', tweet: nil, comment: [@tweet, @comment], submit_text: 'comment', action_method: 'new' %>
+    <div>
+      <% @tweet.comments.order(updated_at: :desc).each do |comment| %>
+        <%= render 'card', model_entity: comment, card_name: 'comment' %>
+      <% end %>
+    </div>
   </div>
 </div>
