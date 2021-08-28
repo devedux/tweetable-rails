@@ -3,7 +3,11 @@
     <%= form.label :body do %>
       <div class="tweet tweet--form mt-16 mb-16" >
         <div>
-          <%= image_tag current_user.avatar, size: "50x50", class: 'input--avatar' %>
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, size: "50x50", class: 'input--avatar' %>
+          <% else %>
+            <%= image_tag 'avatar.png', size: "50x50", class: 'input--avatar' %>
+          <% end %>
         </div>
         <div class="input" >
           <% if action_method == 'edit' %>
