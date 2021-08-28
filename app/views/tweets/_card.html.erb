@@ -9,6 +9,7 @@
     <div class="card__detail-information" >
       <span class="detail__information-name" ><%= model_entity.user.name %></span>
       <span class="detail__information-username" >@<%= model_entity.user.username %></span>
+      <span class="detail__information-time" ><%= "#{distance_of_time_in_words(model_entity.created_at, DateTime.now)} ago" %></span>
     </div>
 
     <p class="detail__description mb-8" ><%= model_entity.body %></p>

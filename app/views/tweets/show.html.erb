@@ -7,7 +7,7 @@
 <div class="mt-16">
   <%= render 'form', tweet: nil, comment: [@tweet, @comment], submit_text: 'comment', action_method: 'new' %>
   <div>
-    <% @tweet.comments.each do |comment| %>
+    <% @tweet.comments.order(updated_at: :desc).each do |comment| %>
       <%= render 'card', model_entity: comment, card_name: 'comment' %>
     <% end %>
   </div>
