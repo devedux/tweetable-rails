@@ -9,6 +9,8 @@
   right: 8px;
   box-shadow: 0px 4px 8px var(--secondary-200);
   border-radius: 6px;
+  animation-name: move;
+  animation-duration: 1s;
 }
 
 .popup__container.success {
@@ -18,4 +20,13 @@
 .popup__container.error {
   color: #d8000c;
   background-color: #ffbaba;
+}
+
+@keyframes move {
+  from {
+    right: -100px;
+  }
+  to {
+    right: 8px;
+  }
 }
