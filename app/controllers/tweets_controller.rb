@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
 
   def update
     if @tweet.update(tweet_params)
-      redirect_to @tweet
+      redirect_to @tweet, notice: 'Tweet was successfully updated.'
     else
       render :edit
     end
@@ -26,6 +26,11 @@ class TweetsController < ApplicationController
     return render :index unless @tweet.save
 
     redirect_to :root, notice: 'Tweet was successfully created.'
+  end
+
+  def destroy
+    current_user.tweets.destroy(params[:id])
+    redirect_to :root, notice: 'Tweet was successfully destroyed.'
   end
 
   private

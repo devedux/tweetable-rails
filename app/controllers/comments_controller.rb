@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @tweet.comments.destroy(params[:id])
-    redirect_to @tweet
+    redirect_to @tweet, notice: 'Comment was successfully destroyed.'
   end
 
   private
