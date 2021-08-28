@@ -1,8 +1,12 @@
 <div class="tweet tweet--card " >
   <% if model_entity.user.avatar.attached? %>
-    <%= image_tag model_entity.user.avatar, size: "50x50", class: "tweet--card-avatar" %>
+    <div>
+      <%= image_tag model_entity.user.avatar, size: "50x50", class: "tweet--card-avatar" %>
+    </div>
   <% else %>
-    <%= image_tag 'avatar.png', size: "50x50", class: "tweet--card-avatar" %>
+    <div>
+      <%= image_tag 'avatar.png', size: "50x50", class: "tweet--card-avatar" %>
+    </div>
   <% end %>
   
   <article class="tweet--card-detail" >
