@@ -1,0 +1,13 @@
+<div class="tweet tweet--form mt-16 mb-16" >
+  <%= form_with model: tweet || comment do |form| %>
+    <div class="input" >
+      <% if action_method == 'edit' %>
+        <div class="input__label" >
+          <%= form.label :body %>
+        </div>        
+      <% end %>
+      <%= form.text_area :body, placeholder: 'Remember to thing before write...', class: 'input--text-area input--form' %>
+    </div>
+    <%= form.submit submit_text, class: 'btn tweet--form-btn' %>
+  <% end %>
+</div>
