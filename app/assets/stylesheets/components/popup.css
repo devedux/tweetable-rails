@@ -5,6 +5,7 @@
   margin: auto;
   padding: 8px;
   box-sizing: border-box;
+  top: 8px;
   right: 8px;
   box-shadow: 0px 4px 8px var(--secondary-200);
   border-radius: 6px;
