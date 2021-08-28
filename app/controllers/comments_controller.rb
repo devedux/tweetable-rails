@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit]
-  before_action :set_tweet, only: %i[edit update destroy]
+  before_action :set_tweet, only: %i[edit update destroy create]
 
   def create
-    @tweet = Tweet.find(params[:tweet_id])
-    @comment = Comment.new(comment_params)
+    @comment = @tweet.comments.new(comment_params)
     @comment.user = current_user
-    @comment.tweet = @tweet
-    @comment.save
-    redirect_to @tweet
+    if @comment.save
+      redirect_to @tweet, notice: 'Comment was successfully created.'
+    else
+      render @tweet
+    end
   end
 
   def edit; end
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
   def update
     @comment = @tweet.comments.find(params[:id])
     if @comment.update(comment_params)
-      redirect_to @tweet
+      redirect_to @tweet, notice: 'Comment was successfully updated.'
     else
       render :edit
     end
