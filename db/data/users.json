@@ -1,0 +1,37 @@
+[
+  {
+    "avatar": "tanus",
+    "email": "tanus@codeable.com",
+    "username": "tanus",
+    "name": "The Great Tanus",
+    "password": "qwerty"
+  },
+  {
+    "avatar": "goku",
+    "email": "goku@codeable.com",
+    "username": "goku2021",
+    "name": "Son Goku",
+    "password": "qwerty"
+  },
+  {
+    "avatar": "dog",
+    "email": "dog@codeable.com",
+    "username": "dogfire",
+    "name": "House on fire",
+    "password": "qwerty"
+  },
+  {
+    "avatar": "diego",
+    "email": "diego@codeable.com",
+    "username": "diego",
+    "name": "Diego Torres",
+    "password": "qwerty"
+  },
+  {
+    "avatar": null,
+    "email": "dr.neail@codeable.com",
+    "username": "drRealNeil",
+    "name": "The real Neil",
+    "password": "qwerty"
+  }
+]

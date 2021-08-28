@@ -42,3 +42,15 @@
 .mb-8 {
   margin-bottom: 8px;
 }
+
+.mt-8 {
+  margin-top: 8px;
+}
+.ml-8 {
+  margin-left: 8px;
+}
+
+.mx-700 {
+  max-width: 700px;
+  margin: auto;
+}

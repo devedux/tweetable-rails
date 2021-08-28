@@ -3,14 +3,14 @@ class TweetsController < ApplicationController
 
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.all
+    @tweets = Tweet.order(updated_at: :desc).all
   end
 
   def edit; end
 
   def update
     if @tweet.update(tweet_params)
-      redirect_to @tweet
+      redirect_to @tweet, notice: 'Tweet was successfully updated.'
     else
       render :edit
     end
@@ -21,11 +21,15 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    @tweet.user = current_user
+    @tweet = current_user.tweets.new(tweet_params)
     return render :index unless @tweet.save
 
-    redirect_to :root
+    redirect_to :root, notice: 'Tweet was successfully created.'
+  end
+
+  def destroy
+    current_user.tweets.destroy(params[:id])
+    redirect_to :root, notice: 'Tweet was successfully destroyed.'
   end
 
   private

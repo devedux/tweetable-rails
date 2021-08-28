@@ -1,0 +1,32 @@
+.popup__container {
+  border: 1px solid var(--secondary-200);
+  position: fixed;
+  background: white;
+  margin: auto;
+  padding: 8px;
+  box-sizing: border-box;
+  top: 8px;
+  right: 8px;
+  box-shadow: 0px 4px 8px var(--secondary-200);
+  border-radius: 6px;
+  animation-name: move;
+  animation-duration: 1s;
+}
+
+.popup__container.success {
+  color: #270;
+  background-color: #dff2bf;
+}
+.popup__container.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+}
+
+@keyframes move {
+  from {
+    right: -100px;
+  }
+  to {
+    right: 8px;
+  }
+}

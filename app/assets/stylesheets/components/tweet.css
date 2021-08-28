@@ -1,5 +1,15 @@
 .tweet.tweet--form {
   position: relative;
+  display: grid;
+  grid-template-columns: 55px auto;
+  border: 1px solid var(--secondary-300);
+  border-radius: 6px;
+  transition: 500ms;
+}
+
+.tweet.tweet--form:focus-within {
+  box-shadow: 0px 4px 8px var(--secondary-200);
+  transition: 500ms;
 }
 
 .tweet.tweet--form .tweet--form-btn {
@@ -37,6 +47,12 @@
 
 .card__detail-information .detail__information-username {
   font-size: 16px;
+  line-height: 24px;
+  color: var(--secondary-400);
+}
+
+.detail__information-time {
+  font-size: 12px;
   line-height: 24px;
   color: var(--secondary-400);
 }
