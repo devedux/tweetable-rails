@@ -4,6 +4,12 @@
   grid-template-columns: 55px auto;
   border: 1px solid var(--secondary-300);
   border-radius: 6px;
+  transition: 500ms;
+}
+
+.tweet.tweet--form:focus-within {
+  box-shadow: 0px 4px 8px var(--secondary-200);
+  transition: 500ms;
 }
 
 .tweet.tweet--form .tweet--form-btn {

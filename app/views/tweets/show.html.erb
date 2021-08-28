@@ -4,7 +4,7 @@
 
 <%= render 'card', model_entity: @tweet, card_name: 'tweet' %>
 
-<div>
+<div class="mt-16">
   <%= render 'form', tweet: nil, comment: [@tweet, @comment], submit_text: 'comment', action_method: 'new' %>
   <div>
     <% @tweet.comments.each do |comment| %>
