@@ -1,5 +1,9 @@
 .tweet.tweet--form {
   position: relative;
+  display: grid;
+  grid-template-columns: 55px auto;
+  border: 1px solid var(--secondary-300);
+  border-radius: 6px;
 }
 
 .tweet.tweet--form .tweet--form-btn {

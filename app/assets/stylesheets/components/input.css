@@ -45,7 +45,8 @@ textarea {
 }
 
 .input--text-area {
-  border: 1px solid var(--secondary-300);
+  /* border: 1px solid var(--secondary-300); */
+  border: none;
   width: 100%;
   border-radius: 6px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -78,4 +79,11 @@ textarea {
   color: #303036;
   padding: 0 6px;
   cursor: pointer;
+}
+
+.input--avatar {
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
