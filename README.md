@@ -1,24 +1,37 @@
-# README
+# Tweetable Basic
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
 
-Things you may want to cover:
+v2.7.3
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+- rails
+- pg
+- devise
+- omniauth [facebook | github | google]
 
-* Configuration
+## Get started
 
-* Database creation
+```bash
+rails db:create
+```
 
-* Database initialization
+```bash
+rails db:migrate
+```
 
-* How to run the test suite
+```bash
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails s -b 0.0.0.0
+```
 
-* Deployment instructions
+## Seed data
 
-* ...
+## User
+
+| username | name | email | password |
+| dogfire | House on fire | dog@codeable.com | qwerty |
