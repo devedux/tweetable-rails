@@ -1,4 +1,4 @@
-# Tweetable Basic
+# Tweetable Basic (mobile version)
 
 ## Ruby version
 
