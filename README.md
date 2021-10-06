@@ -33,5 +33,7 @@ rails s -b 0.0.0.0
 
 ## User
 
-| username | name | email | password |
-| dogfire | House on fire | dog@codeable.com | qwerty |
+```
+| username |      name     |      email       | password |
+| dogfire  | House on fire | dog@codeable.com | qwerty   |
+```
